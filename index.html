@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shreyasi's birthday weekend</title>
+  <meta name="description" content="A birthday weekend, opening soon.">
+  <meta name="theme-color" content="#C8103B">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 29'%3E%3Cpath fill='%23C8103B' d='M23.6 0c-3.4 0-6.4 2.3-7.6 5.5C14.8 2.3 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.1 9.3 11.6 16 20.6 6.7-9 16-11.5 16-20.6C32 3.8 28.2 0 23.6 0z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-locked" data-part="games">
+  <div id="hearts" class="hearts" aria-hidden="true"></div>
+
+  <!-- Switches between the two parts of the front page -->
+  <header class="partbar">
+    <nav class="partbar-inner" aria-label="Parts of this page">
+      <button id="part-btn-games" class="part-btn" type="button" aria-pressed="true">
+        <span class="part-label">Birthday games</span>
+        <span class="part-sub">Play now</span>
+      </button>
+      <button id="part-btn-trip" class="part-btn" type="button" aria-pressed="false">
+        <span class="part-label">Our trip</span>
+        <span id="trip-sub" class="part-sub">Opens soon</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Part 1: always open. Games that unlock gifts. No trip details in here. -->
+  <div id="part-games" class="part">
+    <div id="gifts-root"></div>
+  </div>
+
+  <!-- Part 2: the trip. Countdown first, then the full trip page. -->
+  <div id="part-trip" class="part" hidden>
+
+    <!-- Shown until the unlock time -->
+  <main id="locked" class="locked">
+    <div class="ticket-wrap">
+      <div class="ticket-top">
+        <p class="ticket-brand">Boarding pass</p>
+        <h1 class="ticket-title">Your birthday weekend starts in</h1>
+        <p class="sr-only" id="cd-live" aria-live="off"></p>
+        <div class="countdown" aria-hidden="true">
+          <div class="cd-box"><span id="cd-days" class="cd-num">0</span><span class="cd-label">days</span></div>
+          <div class="cd-box"><span id="cd-hours" class="cd-num">00</span><span class="cd-label">hours</span></div>
+          <div class="cd-box"><span id="cd-mins" class="cd-num">00</span><span class="cd-label">minutes</span></div>
+          <div class="cd-box"><span id="cd-secs" class="cd-num">00</span><span class="cd-label">seconds</span></div>
+        </div>
+      </div>
+      <div class="ticket-bottom">
+        <dl class="ticket-meta">
+          <div><dt>Passenger</dt><dd>Shreyasi</dd></div>
+          <div><dt>Boards</dt><dd>Thursday, Oct 29, 3:00 PM ET</dd></div>
+          <div><dt>Destination</dt><dd>A surprise</dd></div>
+        </dl>
+        <p class="ticket-note">Keep this page open. It unlocks all by itself.</p>
+        <p id="load-error" class="load-error" role="alert" hidden></p>
+      </div>
+    </div>
+  </main>
+
+    <!-- Shown after the unlock -->
+  <div id="site" class="site" hidden>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#top">Home</a>
+      <a href="#plan">Plan</a>
+      <a href="#games">Games</a>
+      <a href="#packing">Packing</a>
+      <a href="#info">Info</a>
+    </nav>
+
+    <header id="top" class="hero">
+      <div id="hero-inner" class="wrap hero-inner"></div>
+    </header>
+
+    <main>
+      <section id="plan" class="section">
+        <div class="wrap">
+          <h2 class="section-title">The plan</h2>
+          <p class="section-lede">Pick a day! Every stop has the time, the address, and what to know. Tap View menu wherever you see it.</p>
+          <p id="wx-note" class="wx-note">Loading the forecast...</p>
+          <div id="days-root"></div>
+        </div>
+      </section>
+
+      <section id="games" class="section section-alt">
+        <div class="wrap">
+          <h2 class="section-title">Dinner games</h2>
+          <p class="section-lede">Games for the dinner table. Most likely to is played on two phones, question by question. Who knows who better is a quiz where one person guesses the other's answers.</p>
+          <div id="games-root"></div>
+        </div>
+      </section>
+
+      <section id="packing" class="section">
+        <div class="wrap">
+          <h2 class="section-title">Packing list</h2>
+          <p class="section-lede">Tap to check things off. Your list stays checked on this device.</p>
+          <div id="packing-root"></div>
+        </div>
+      </section>
+
+      <section id="info" class="section section-alt">
+        <div class="wrap">
+          <h2 class="section-title">Trip info</h2>
+          <div id="info-root"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>Made with so much love for your birthday.</p>
+      </div>
+    </footer>
+  </div>
+  </div>
+
+  <dialog id="menu-dialog" class="menu-dialog" aria-labelledby="menu-title">
+    <div class="menu-head">
+      <h3 id="menu-title" class="menu-title">Menu</h3>
+      <button id="menu-close" class="btn btn-small btn-ghost" type="button">Close</button>
+    </div>
+    <div id="menu-body" class="menu-body"></div>
+    <div id="menu-foot" class="menu-foot"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="preview-ribbon" class="preview-ribbon" hidden>Preview mode. <a href="./">Back to the countdown</a></div>
+
+  <noscript><p class="noscript">This page needs JavaScript to run the countdown and the games.</p></noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/hearts.js"></script>
+  <script src="js/puzzle.js"></script>
+  <script src="js/memory.js"></script>
+  <script src="js/feedback.js"></script>
+  <script src="js/gifts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
