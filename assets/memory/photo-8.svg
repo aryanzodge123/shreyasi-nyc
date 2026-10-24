@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
-<rect width="600" height="600" fill="#ffe0f0"/>
-<rect x="24" y="24" width="552" height="552" rx="30" fill="none" stroke="#fff" stroke-width="10"/>
-<path d="M150 210 H430 L405 420 A60 60 0 0 1 345 470 H235 A60 60 0 0 1 175 420Z" fill="#a00b2f"/><path d="M430 250 H470 A55 55 0 0 1 470 360 H415" stroke="#a00b2f" stroke-width="22" fill="none"/><rect x="130" y="480" width="340" height="18" rx="9" fill="#a00b2f"/>
-<text x="300" y="560" text-anchor="middle" font-family="Trebuchet MS, Arial, sans-serif" font-weight="800" font-size="40" fill="#3b0f20">Filler photo 8</text>
-</svg>

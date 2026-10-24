@@ -1,6 +1,7 @@
 /*
   The front page has two parts, switched by the bar at the top:
-    1. Birthday games: always open. Slide puzzle and memory match that unlock gifts (js/gifts.js).
+    0. Before the games open (gamesAt) the whole site shows only a countdown.
+    1. Birthday games: open from gamesAt on. Slide puzzle and memory match that unlock gifts (js/gifts.js).
     2. Our trip: a countdown until the unlock time, then the full trip page.
   Countdown and unlock. Until the unlock time the trip part shows only the countdown.
   The trip content, games and weather code are loaded only after the unlock, so the page does not
@@ -13,10 +14,13 @@
 
   var CFG = window.NYC_CONFIG;
   var UNLOCK_MS = Date.parse(CFG.unlockAt);
+  var GAMES_MS = Date.parse(CFG.gamesAt);
   var params = new URLSearchParams(window.location.search);
   var preview = params.get("preview") === CFG.previewCode;
   var unlocked = false;
   var tick = null;
+  var siteTick = null;
+  var begun = false;
 
   var SCRIPTS = ["js/data.js", "js/weather.js", "js/mostlikely.js", "js/quiz-data.js", "js/quiz.js", "js/site.js"];
   var part = "games";
@@ -67,22 +71,27 @@
     if (s) s.textContent = text;
   }
 
-  function renderCountdown(ms) {
+  function fillCountdown(prefix, ms) {
     var total = Math.max(0, Math.floor(ms / 1000));
     var d = Math.floor(total / 86400);
     var h = Math.floor((total % 86400) / 3600);
     var m = Math.floor((total % 3600) / 60);
     var s = total % 60;
-    $("cd-days").textContent = String(d);
-    $("cd-hours").textContent = pad(h);
-    $("cd-mins").textContent = pad(m);
-    $("cd-secs").textContent = pad(s);
+    $(prefix + "-days").textContent = String(d);
+    $(prefix + "-hours").textContent = pad(h);
+    $(prefix + "-mins").textContent = pad(m);
+    $(prefix + "-secs").textContent = pad(s);
     var parts = [];
     parts.push(d + (d === 1 ? " day" : " days"));
     parts.push(h + (h === 1 ? " hour" : " hours"));
     parts.push(m + (m === 1 ? " minute" : " minutes"));
-    $("cd-live").textContent = parts.join(", ") + " to go";
-    setTripLabel(d > 0 ? "Opens in " + d + (d === 1 ? " day" : " days") : h > 0 ? "Opens in " + h + "h" : "Opens in " + m + "m");
+    $(prefix + "-live").textContent = parts.join(", ") + " to go";
+    return { d: d, h: h, m: m };
+  }
+
+  function renderCountdown(ms) {
+    var t = fillCountdown("cd", ms);
+    setTripLabel(t.d > 0 ? "Opens in " + t.d + (t.d === 1 ? " day" : " days") : t.h > 0 ? "Opens in " + t.h + "h" : "Opens in " + t.m + "m");
   }
 
   function loadScript(src) {
@@ -134,8 +143,10 @@
     });
   }
 
-  function start() {
-    if (window.NYC.hearts) window.NYC.hearts.start();
+  /* The games part and the trip countdown. Runs once the whole site is open. */
+  function begin() {
+    if (begun) return;
+    begun = true;
     if (window.NYC.gifts) window.NYC.gifts.render($("gifts-root"));
 
     var isOpen = preview || Date.now() >= UNLOCK_MS;
@@ -161,6 +172,39 @@
         return;
       }
       renderCountdown(left);
+    }, 1000);
+  }
+
+  function openFront(celebrate) {
+    if (siteTick) clearInterval(siteTick);
+    $("site-lock").hidden = true;
+    $("front").hidden = false;
+    begin();
+    if (celebrate) {
+      window.scrollTo(0, 0);
+      if (window.NYC.hearts) window.NYC.hearts.burst(window.innerWidth / 2, window.innerHeight / 3, 60);
+    }
+  }
+
+  function start() {
+    if (window.NYC.hearts) window.NYC.hearts.start();
+
+    if (preview || Date.now() >= GAMES_MS) {
+      openFront(false);
+      return;
+    }
+
+    /* Before the games open: only the countdown is on the page. */
+    $("site-lock").hidden = false;
+    fillCountdown("sl", GAMES_MS - Date.now());
+    siteTick = setInterval(function () {
+      var left = GAMES_MS - Date.now();
+      if (left <= 0) {
+        fillCountdown("sl", 0);
+        openFront(true);
+        return;
+      }
+      fillCountdown("sl", left);
     }, 1000);
   }
 

@@ -16,6 +16,31 @@
 <body class="is-locked" data-part="games">
   <div id="hearts" class="hearts" aria-hidden="true"></div>
 
+  <!-- Whole site countdown. Shown until the games open. Nothing else is visible before then. -->
+  <main id="site-lock" class="locked" hidden>
+    <div class="ticket-wrap">
+      <div class="ticket-top">
+        <p class="ticket-brand">For the birthday girl</p>
+        <h1 class="ticket-title">Your birthday games open in</h1>
+        <p class="sr-only" id="sl-live" aria-live="off"></p>
+        <div class="countdown" aria-hidden="true">
+          <div class="cd-box"><span id="sl-days" class="cd-num">0</span><span class="cd-label">days</span></div>
+          <div class="cd-box"><span id="sl-hours" class="cd-num">00</span><span class="cd-label">hours</span></div>
+          <div class="cd-box"><span id="sl-mins" class="cd-num">00</span><span class="cd-label">minutes</span></div>
+          <div class="cd-box"><span id="sl-secs" class="cd-num">00</span><span class="cd-label">seconds</span></div>
+        </div>
+      </div>
+      <div class="ticket-bottom">
+        <dl class="ticket-meta">
+          <div><dt>Player</dt><dd>Shreyasi</dd></div>
+          <div><dt>Opens</dt><dd>Tuesday, Oct 27, midnight ET</dd></div>
+        </dl>
+        <p class="ticket-note">Keep this page open. It opens all by itself.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="front" hidden>
   <!-- Switches between the two parts of the front page -->
   <header class="partbar">
     <nav class="partbar-inner" aria-label="Parts of this page">
@@ -55,7 +80,7 @@
       <div class="ticket-bottom">
         <dl class="ticket-meta">
           <div><dt>Passenger</dt><dd>Shreyasi</dd></div>
-          <div><dt>Boards</dt><dd>Thursday, Oct 29, 3:00 PM ET</dd></div>
+          <div><dt>Opens</dt><dd>Thursday, Oct 29, midnight ET</dd></div>
           <div><dt>Destination</dt><dd>A surprise</dd></div>
         </dl>
         <p class="ticket-note">Keep this page open. It unlocks all by itself.</p>
@@ -118,6 +143,8 @@
       </div>
     </footer>
   </div>
+  </div>
+
   </div>
 
   <dialog id="menu-dialog" class="menu-dialog" aria-labelledby="menu-title">

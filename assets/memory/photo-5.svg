@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
-<rect width="600" height="600" fill="#bfe9d5"/>
-<rect x="24" y="24" width="552" height="552" rx="30" fill="none" stroke="#fff" stroke-width="10"/>
-<path d="M120 460 C120 200 300 120 480 140 C490 330 380 480 120 460Z" fill="#2e9e57"/><path d="M130 450 C230 330 330 250 450 170" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round"/>
-<text x="300" y="560" text-anchor="middle" font-family="Trebuchet MS, Arial, sans-serif" font-weight="800" font-size="40" fill="#3b0f20">Filler photo 5</text>
-</svg>

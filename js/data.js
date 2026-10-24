@@ -202,7 +202,7 @@ window.NYC_DATA = (function () {
           blurb: "Delta from Charlotte (CLT) to LaGuardia (LGA). We take off at 5:00 PM and land at 6:59 PM. Birthday weekend, here we come.",
           address: { name: "Charlotte Douglas International Airport (CLT)", text: "5501 Josh Birmingham Pkwy, Charlotte, NC 28208" },
           notes: [
-            "Get to the airport about two hours before takeoff. That is exactly when this page unlocks, so hi, you are right on time.",
+            "Get to the airport about two hours before takeoff, so around 3:00 PM. This page has been open since midnight, so hi, you are right on time.",
             "Boarding passes go in your phone wallet, and keep a photo ID within reach.",
             "Costume props can cause drama at security. Double check the TSA rules for anything sword shaped or sharp."
           ],

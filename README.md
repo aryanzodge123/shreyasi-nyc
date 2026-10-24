@@ -4,13 +4,13 @@ A static site (HTML, CSS, plain JavaScript). No build step. Works on GitHub Page
 
 ## What it does
 
-The front page has two parts, switched by the bar at the top.
+The whole site starts as a countdown to Tuesday, Oct 27, 2026, midnight ET (`gamesAt` in `js/config.js`). Nothing else is on the page before then (no games, no photos loaded, no trip details). At that moment the front page opens by itself, with two parts switched by the bar at the top.
 
-- **Birthday games** is always open. It has the slide puzzle and the memory match. Finishing a game unlocks its gift card ("Come find me, your gift is waiting"). It holds no trip details, so she can play it before the countdown ends. Progress is saved on her phone. Open the link once with `?resetgifts=1` to clear it.
+- **Birthday games** is open from Oct 27 on. It has the slide puzzle and the memory match. Finishing a game unlocks its gift card ("Come find me, your gift is waiting"). It holds no trip details, so she can play it before the countdown ends. Progress is saved on her phone. Open the link once with `?resetgifts=1` to clear it.
 - **Our trip** shows the countdown until the unlock, then the full trip page. The dinner games (Who's most likely to and the quiz) live here, on the trip page.
 
 
-- Shows a boarding-pass countdown until Thursday, Oct 29, 2026, 3:00 PM ET (2 hours before the 5:00 PM flight). The full site opens by itself at that time.
+- The trip part shows a boarding-pass countdown until Thursday, Oct 29, 2026, midnight ET (`unlockAt` in `js/config.js`, the day of the 5:00 PM flight). The full trip page opens by itself at that time.
 - Before the unlock, the page does not load any trip details. The itinerary, menus and addresses are in separate files that load only after unlock.
 - Itinerary for Thursday to Sunday with time, address (copy button and Maps link), notes, travel tips, menus for six venues, and weather.
 - Weather: daily summary, plus the forecast for the hour of each stop (Open-Meteo, free, no key).
@@ -19,13 +19,13 @@ The front page has two parts, switched by the bar at the top.
 
 ## Preview before the unlock
 
-Open `index.html?preview=jolly-roger-1030` (it opens on the trip part) (on GitHub Pages: `https://USERNAME.github.io/REPO/?preview=jolly-roger-1030`). Change the code in `js/config.js` (`previewCode`).
+Open `index.html?preview=jolly-roger-1030` (it skips both countdowns and opens on the trip part) (on GitHub Pages: `https://USERNAME.github.io/REPO/?preview=jolly-roger-1030`). Change the code in `js/config.js` (`previewCode`).
 
-## Add your photos and sentences
+## Photos and tags (already in place)
 
-1. Puzzle photo: put a square photo at `assets/puzzle/us.jpg`, then in `js/config.js` set `puzzle.image` to `"assets/puzzle/us.jpg"`. A square crop (for example 1200 x 1200) gives the cleanest tiles.
-2. Memory photos: put 8 photos in `assets/memory/` (for example `photo-1.jpg` to `photo-8.jpg`, square or 3:4 crops work best).
-3. In `js/config.js`, edit each entry of `memoryPairs`: set `image`, `alt` and `tag` (the sentence about where the photo was taken). Keep exactly 8 entries (16 tiles).
+1. Puzzle photo: `assets/puzzle/us.jpg` (the sailboat photo, square crop, 1200 x 1200). It is set in `js/config.js` as `puzzle.image`.
+2. Memory photos: `assets/memory/photo-1.jpg` to `photo-8.jpg` (resized to 900 px max). Tags in order: Durga Puja, Rail Trail Walk, New Years!, NYC pt1, Drunk night out, Barthelona, Exotica, SF maybe?
+3. To swap one, replace the file (keep the name) or edit the matching entry of `memoryPairs` in `js/config.js` (`image`, `alt`, `tag`). Keep exactly 8 entries (16 tiles).
 
 ## Who's most likely to
 

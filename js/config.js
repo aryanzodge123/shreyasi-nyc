@@ -1,8 +1,10 @@
 /*
   Things you can change without touching any other file.
 
-  unlockAt     When the countdown ends and the site opens. Two hours before the 5:00 PM flight
-               on Thursday, October 29, 2026, Eastern time (UTC-4).
+  gamesAt      When the whole site opens (the Birthday games). Midnight at the start of Tuesday,
+               October 27, 2026, Eastern time (UTC-4). Before this only a countdown shows.
+  unlockAt     When the trip page opens. Midnight at the start of Thursday, October 29, 2026,
+               Eastern time (UTC-4), the day of the flight.
   previewCode  Open the site with ?preview=THIS_CODE at the end of the link to skip the countdown
                while you test. Example: https://yourname.github.io/your-repo/?preview=jolly-roger-1030
                This is not security. Anyone who reads the files on GitHub can see it.
@@ -15,7 +17,8 @@
 */
 window.NYC_CONFIG = {
   recipient: "Shreyasi",
-  unlockAt: "2026-10-29T15:00:00-04:00",
+  gamesAt: "2026-10-27T00:00:00-04:00",
+  unlockAt: "2026-10-29T00:00:00-04:00",
   previewCode: "jolly-roger-1030",
 
 
@@ -116,18 +119,18 @@ window.NYC_CONFIG = {
   },
 
   puzzle: {
-    image: "assets/puzzle/us.svg",
-    alt: "A photo of the two of us"
+    image: "assets/puzzle/us.jpg",
+    alt: "The two of us sitting on a sailboat in front of a cliff"
   },
 
   memoryPairs: [
-    { image: "assets/memory/photo-1.svg", alt: "Filler photo 1", tag: "Filler tag 1: replace this with the sentence about where this photo was taken." },
-    { image: "assets/memory/photo-2.svg", alt: "Filler photo 2", tag: "Filler tag 2: replace this with the sentence about where this photo was taken." },
-    { image: "assets/memory/photo-3.svg", alt: "Filler photo 3", tag: "Filler tag 3: replace this with the sentence about where this photo was taken." },
-    { image: "assets/memory/photo-4.svg", alt: "Filler photo 4", tag: "Filler tag 4: replace this with the sentence about where this photo was taken." },
-    { image: "assets/memory/photo-5.svg", alt: "Filler photo 5", tag: "Filler tag 5: replace this with the sentence about where this photo was taken." },
-    { image: "assets/memory/photo-6.svg", alt: "Filler photo 6", tag: "Filler tag 6: replace this with the sentence about where this photo was taken." },
-    { image: "assets/memory/photo-7.svg", alt: "Filler photo 7", tag: "Filler tag 7: replace this with the sentence about where this photo was taken." },
-    { image: "assets/memory/photo-8.svg", alt: "Filler photo 8", tag: "Filler tag 8: replace this with the sentence about where this photo was taken." }
+    { image: "assets/memory/photo-1.jpg", alt: "Dressed up on a sunny deck", tag: "Durga Puja" },
+    { image: "assets/memory/photo-2.jpg", alt: "A selfie in a round street mirror", tag: "Rail Trail Walk" },
+    { image: "assets/memory/photo-3.jpg", alt: "Laughing together at a house party", tag: "New Years!" },
+    { image: "assets/memory/photo-4.jpg", alt: "Standing by a window with a city lit up at night", tag: "NYC pt1" },
+    { image: "assets/memory/photo-5.jpg", alt: "A big happy hug in an elevator", tag: "Drunk night out" },
+    { image: "assets/memory/photo-6.jpg", alt: "Sitting together looking out over a big city", tag: "Barthelona" },
+    { image: "assets/memory/photo-7.jpg", alt: "A smiling selfie under a tree at dusk", tag: "Exotica" },
+    { image: "assets/memory/photo-8.jpg", alt: "Smiling by the water with a red bridge behind us", tag: "SF maybe?" }
   ]
 };
