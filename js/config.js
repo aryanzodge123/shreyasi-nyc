@@ -9,7 +9,6 @@
                while you test. Example: https://yourname.github.io/your-repo/?preview=jolly-roger-1030
                This is not security. Anyone who reads the files on GitHub can see it.
   puzzle       The one photo that gets split into the 4x4 sliding puzzle.
-  feedbackForm The answers form for Shreyasi (25 questions, .txt file, email to Aryan).
   gifts        The words for the always open Birthday games part.
   mostLikely   The two player names and the 25 "Who's most likely to" prompts.
   memoryPairs  Exactly 8 photos, each with the sentence that describes where it was taken.
@@ -76,46 +75,6 @@ window.NYC_CONFIG = {
       unlocked: "All matched! Come find me. Your second gift is waiting."
     },
     both: "Both games done! Come find me, your gifts are waiting."
-  },
-
-  /*
-    feedbackForm  A short form for Shreyasi to answer 25 questions, one short answer each. She copies the
-                  questions if she wants, then makes a .txt file and emails it to the address below.
-                  The page cannot send email by itself, so the Email button opens her mail app with the
-                  answers filled in. To remove the form, set enabled to false.
-  */
-  feedbackForm: {
-    enabled: true,
-    email: "aryanzodge1@gmail.com",
-    title: "A few questions from Aryan",
-    intro: "Answer each question with one short answer. Your answers save on this phone as you type. When all of them are filled in, make the file and send it to Aryan.",
-    questions: [
-      "What is your favorite food or cuisine?",
-      "What is your go-to coffee shop order (or drink of choice)?",
-      "What is your favorite movie or TV show?",
-      "What is your favorite dessert?",
-      "What is your favorite way to spend a lazy Sunday?",
-      "Are you a morning person or a night owl?",
-      "What is your biggest pet peeve?",
-      "How do you handle stress (talk it out, go quiet, exercise, distract yourself)?",
-      "What is your comfort food on a bad day?",
-      "What is your most dramatic reaction to a minor inconvenience?",
-      "Where was our first date?",
-      "When did you first realize you were falling for me?",
-      "What small thing do I do that makes you feel loved?",
-      "What is your favorite memory of us together?",
-      "What song makes you think of us?",
-      "What is one thing about me you hope never changes?",
-      "What is one trip or adventure you want us to take together?",
-      "If you were an animal, what would you be?",
-      "What would you do first during a zombie apocalypse?",
-      "What is your go-to karaoke song?",
-      "What snack would you never share?",
-      "What is the weirdest food combination you enjoy?",
-      "If you were a cartoon character, who would you be?",
-      "If you won the lottery tomorrow, what is the first thing you would buy or do?",
-      "What would your perfect date night look like?"
-    ]
   },
 
   puzzle: {

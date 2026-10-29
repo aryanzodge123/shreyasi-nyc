@@ -1,7 +1,7 @@
 /*
   Data for the "Who knows who better?" quiz. It loads only after the trip page unlocks.
 
-  Every question needs:
+  Every question has:
     q        The question, written about one person. {name} is the person whose answer is being guessed.
              {other} is the person who is playing.
     answers  The real answer from each person.
@@ -10,211 +10,488 @@
   When Aryan plays, he guesses Shreyasi's answers: the real answer is answers.Shreyasi and the wrong
   options are decoys.Shreyasi. When Shreyasi plays, it is the other way around.
 
-  These are FILLER answers. Replace every "(replace me)" with the real answers before sharing the link.
   A question that is missing an answer or has fewer than 3 decoys for a person is skipped, and the score is
   always out of the questions that are complete.
 */
 window.NYC_QUIZ = {
-  names: ["Aryan", "Shreyasi"],
-  questions: [
+  "names": [
+    "Aryan",
+    "Shreyasi"
+  ],
+  "questions": [
     {
-      q: "What is {name}'s favorite food or cuisine?",
-      answers: { Aryan: "Q1 Aryan real answer (replace me)", Shreyasi: "Q1 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q1 decoy 1 for Aryan (replace me)", "Q1 decoy 2 for Aryan (replace me)", "Q1 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q1 decoy 1 for Shreyasi (replace me)", "Q1 decoy 2 for Shreyasi (replace me)", "Q1 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s favorite food or cuisine?",
+      "answers": {
+        "Aryan": "Ramen",
+        "Shreyasi": "Thai"
+      },
+      "decoys": {
+        "Aryan": [
+          "Sushi",
+          "Mexican",
+          "Pizza"
+        ],
+        "Shreyasi": [
+          "Italian",
+          "Mexican",
+          "Indian"
+        ]
       }
     },
     {
-      q: "What is {name}'s go-to coffee shop order (or drink of choice)?",
-      answers: { Aryan: "Q2 Aryan real answer (replace me)", Shreyasi: "Q2 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q2 decoy 1 for Aryan (replace me)", "Q2 decoy 2 for Aryan (replace me)", "Q2 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q2 decoy 1 for Shreyasi (replace me)", "Q2 decoy 2 for Shreyasi (replace me)", "Q2 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s go-to coffee shop order (or drink of choice)?",
+      "answers": {
+        "Aryan": "Iced Americano",
+        "Shreyasi": "Cold brew with 2 pumps brown sugar"
+      },
+      "decoys": {
+        "Aryan": [
+          "Iced latte",
+          "Flat white",
+          "Cappuccino"
+        ],
+        "Shreyasi": [
+          "Iced latte with oat milk",
+          "Vanilla latte",
+          "Iced matcha"
+        ]
       }
     },
     {
-      q: "What is {name}'s favorite movie or TV show?",
-      answers: { Aryan: "Q3 Aryan real answer (replace me)", Shreyasi: "Q3 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q3 decoy 1 for Aryan (replace me)", "Q3 decoy 2 for Aryan (replace me)", "Q3 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q3 decoy 1 for Shreyasi (replace me)", "Q3 decoy 2 for Shreyasi (replace me)", "Q3 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s favorite movie or TV show?",
+      "answers": {
+        "Aryan": "Zindagi",
+        "Shreyasi": "Rocky Aur Rani"
+      },
+      "decoys": {
+        "Aryan": [
+          "3 Idiots",
+          "Brooklyn Nine-Nine",
+          "Breaking Bad"
+        ],
+        "Shreyasi": [
+          "Jab We Met",
+          "Friends",
+          "Yeh Jawaani Hai Deewani"
+        ]
       }
     },
     {
-      q: "What is {name}'s favorite dessert?",
-      answers: { Aryan: "Q4 Aryan real answer (replace me)", Shreyasi: "Q4 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q4 decoy 1 for Aryan (replace me)", "Q4 decoy 2 for Aryan (replace me)", "Q4 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q4 decoy 1 for Shreyasi (replace me)", "Q4 decoy 2 for Shreyasi (replace me)", "Q4 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s favorite dessert?",
+      "answers": {
+        "Aryan": "Ice cream",
+        "Shreyasi": "Gajar halwa"
+      },
+      "decoys": {
+        "Aryan": [
+          "Tiramisu",
+          "Brownies",
+          "Cheesecake"
+        ],
+        "Shreyasi": [
+          "Gulab jamun",
+          "Rasmalai",
+          "Tiramisu"
+        ]
       }
     },
     {
-      q: "What is {name}'s favorite way to spend a lazy Sunday?",
-      answers: { Aryan: "Q5 Aryan real answer (replace me)", Shreyasi: "Q5 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q5 decoy 1 for Aryan (replace me)", "Q5 decoy 2 for Aryan (replace me)", "Q5 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q5 decoy 1 for Shreyasi (replace me)", "Q5 decoy 2 for Shreyasi (replace me)", "Q5 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s favorite way to spend a lazy Sunday?",
+      "answers": {
+        "Aryan": "Watch movies",
+        "Shreyasi": "Walk a lot and watch a movie"
+      },
+      "decoys": {
+        "Aryan": [
+          "Play golf",
+          "Sleep in",
+          "Cook a big breakfast"
+        ],
+        "Shreyasi": [
+          "Sleep in and order food",
+          "Brunch and shopping",
+          "Read at a cafe"
+        ]
       }
     },
     {
-      q: "Is {name} a morning person or a night owl?",
-      answers: { Aryan: "Q6 Aryan real answer (replace me)", Shreyasi: "Q6 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q6 decoy 1 for Aryan (replace me)", "Q6 decoy 2 for Aryan (replace me)", "Q6 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q6 decoy 1 for Shreyasi (replace me)", "Q6 decoy 2 for Shreyasi (replace me)", "Q6 decoy 3 for Shreyasi (replace me)"]
+      "q": "Is {name} a morning person or a night owl?",
+      "answers": {
+        "Aryan": "Night owl",
+        "Shreyasi": "Night owl"
+      },
+      "decoys": {
+        "Aryan": [
+          "Morning person",
+          "Both, depends on the day",
+          "Morning person on weekdays only"
+        ],
+        "Shreyasi": [
+          "Morning person",
+          "Both, depends on the day",
+          "Morning person on weekends only"
+        ]
       }
     },
     {
-      q: "What is {name}'s biggest pet peeve?",
-      answers: { Aryan: "Q7 Aryan real answer (replace me)", Shreyasi: "Q7 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q7 decoy 1 for Aryan (replace me)", "Q7 decoy 2 for Aryan (replace me)", "Q7 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q7 decoy 1 for Shreyasi (replace me)", "Q7 decoy 2 for Shreyasi (replace me)", "Q7 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s biggest pet peeve?",
+      "answers": {
+        "Aryan": "Backseat driving",
+        "Shreyasi": "Loud chewing"
+      },
+      "decoys": {
+        "Aryan": [
+          "Slow walkers",
+          "Being late",
+          "Messy kitchens"
+        ],
+        "Shreyasi": [
+          "Slow walkers",
+          "Being interrupted",
+          "Cold food"
+        ]
       }
     },
     {
-      q: "How does {name} handle stress?",
-      answers: { Aryan: "Q8 Aryan real answer (replace me)", Shreyasi: "Q8 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q8 decoy 1 for Aryan (replace me)", "Q8 decoy 2 for Aryan (replace me)", "Q8 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q8 decoy 1 for Shreyasi (replace me)", "Q8 decoy 2 for Shreyasi (replace me)", "Q8 decoy 3 for Shreyasi (replace me)"]
+      "q": "How does {name} handle stress?",
+      "answers": {
+        "Aryan": "Go quiet",
+        "Shreyasi": "Talk it out"
+      },
+      "decoys": {
+        "Aryan": [
+          "Talk it out",
+          "Exercise",
+          "Distract himself"
+        ],
+        "Shreyasi": [
+          "Go quiet",
+          "Exercise",
+          "Distract herself"
+        ]
       }
     },
     {
-      q: "What is {name}'s comfort food on a bad day?",
-      answers: { Aryan: "Q9 Aryan real answer (replace me)", Shreyasi: "Q9 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q9 decoy 1 for Aryan (replace me)", "Q9 decoy 2 for Aryan (replace me)", "Q9 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q9 decoy 1 for Shreyasi (replace me)", "Q9 decoy 2 for Shreyasi (replace me)", "Q9 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s comfort food on a bad day?",
+      "answers": {
+        "Aryan": "Noodles",
+        "Shreyasi": "Buffalo chicken sandwich and fries"
+      },
+      "decoys": {
+        "Aryan": [
+          "Pizza",
+          "Mac and cheese",
+          "Fried rice"
+        ],
+        "Shreyasi": [
+          "Mac and cheese",
+          "Biryani",
+          "Grilled cheese and tomato soup"
+        ]
       }
     },
     {
-      q: "What is {name}'s most dramatic reaction to a minor inconvenience?",
-      answers: { Aryan: "Q10 Aryan real answer (replace me)", Shreyasi: "Q10 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q10 decoy 1 for Aryan (replace me)", "Q10 decoy 2 for Aryan (replace me)", "Q10 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q10 decoy 1 for Shreyasi (replace me)", "Q10 decoy 2 for Shreyasi (replace me)", "Q10 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s most dramatic reaction to a minor inconvenience?",
+      "answers": {
+        "Aryan": "Bruh",
+        "Shreyasi": "Crying"
+      },
+      "decoys": {
+        "Aryan": [
+          "Dramatic sigh",
+          "Long rant",
+          "Eye roll"
+        ],
+        "Shreyasi": [
+          "Dramatic sigh",
+          "Flopping on the floor",
+          "Texting everyone about it"
+        ]
       }
     },
     {
-      q: "According to {name}, where was your first date?",
-      answers: { Aryan: "Q11 Aryan real answer (replace me)", Shreyasi: "Q11 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q11 decoy 1 for Aryan (replace me)", "Q11 decoy 2 for Aryan (replace me)", "Q11 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q11 decoy 1 for Shreyasi (replace me)", "Q11 decoy 2 for Shreyasi (replace me)", "Q11 decoy 3 for Shreyasi (replace me)"]
+      "q": "According to {name}, where was your first date?",
+      "answers": {
+        "Aryan": "Ikea",
+        "Shreyasi": "Sushi Hana"
+      },
+      "decoys": {
+        "Aryan": [
+          "Starbucks",
+          "A mini golf course",
+          "A movie theater"
+        ],
+        "Shreyasi": [
+          "Thai Orchid",
+          "Casa Verde",
+          "Sakura Hibachi"
+        ]
       }
     },
     {
-      q: "When did {name} first realize they were falling for {other}?",
-      answers: { Aryan: "Q12 Aryan real answer (replace me)", Shreyasi: "Q12 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q12 decoy 1 for Aryan (replace me)", "Q12 decoy 2 for Aryan (replace me)", "Q12 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q12 decoy 1 for Shreyasi (replace me)", "Q12 decoy 2 for Shreyasi (replace me)", "Q12 decoy 3 for Shreyasi (replace me)"]
+      "q": "When did {name} first realize they were falling for {other}?",
+      "answers": {
+        "Aryan": "After your first bite of food",
+        "Shreyasi": "Watching you golf"
+      },
+      "decoys": {
+        "Aryan": [
+          "The first time you laughed at my joke",
+          "When you fell asleep on my shoulder",
+          "The first time you drove us"
+        ],
+        "Shreyasi": [
+          "When you cooked for me",
+          "The first time you made me laugh",
+          "Our first long phone call"
+        ]
       }
     },
     {
-      q: "What small thing does {other} do that makes {name} feel loved?",
-      answers: { Aryan: "Q13 Aryan real answer (replace me)", Shreyasi: "Q13 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q13 decoy 1 for Aryan (replace me)", "Q13 decoy 2 for Aryan (replace me)", "Q13 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q13 decoy 1 for Shreyasi (replace me)", "Q13 decoy 2 for Shreyasi (replace me)", "Q13 decoy 3 for Shreyasi (replace me)"]
+      "q": "What small thing does {other} do that makes {name} feel loved?",
+      "answers": {
+        "Aryan": "Listen",
+        "Shreyasi": "Random kisses"
+      },
+      "decoys": {
+        "Aryan": [
+          "Give hugs",
+          "Plan surprises",
+          "Send random texts"
+        ],
+        "Shreyasi": [
+          "Bringing home snacks",
+          "Remembering little details",
+          "Holding hands"
+        ]
       }
     },
     {
-      q: "What is {name}'s favorite memory of the two of you together?",
-      answers: { Aryan: "Q14 Aryan real answer (replace me)", Shreyasi: "Q14 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q14 decoy 1 for Aryan (replace me)", "Q14 decoy 2 for Aryan (replace me)", "Q14 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q14 decoy 1 for Shreyasi (replace me)", "Q14 decoy 2 for Shreyasi (replace me)", "Q14 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s favorite memory of the two of you together?",
+      "answers": {
+        "Aryan": "Dinner at Tremont",
+        "Shreyasi": "Mallorca"
+      },
+      "decoys": {
+        "Aryan": [
+          "The Durga Puja night",
+          "Walking the rail trail",
+          "New Year's Eve together"
+        ],
+        "Shreyasi": [
+          "Barcelona",
+          "San Francisco",
+          "Our first Durga Puja"
+        ]
       }
     },
     {
-      q: "What song makes {name} think of the two of you?",
-      answers: { Aryan: "Q15 Aryan real answer (replace me)", Shreyasi: "Q15 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q15 decoy 1 for Aryan (replace me)", "Q15 decoy 2 for Aryan (replace me)", "Q15 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q15 decoy 1 for Shreyasi (replace me)", "Q15 decoy 2 for Shreyasi (replace me)", "Q15 decoy 3 for Shreyasi (replace me)"]
+      "q": "What song makes {name} think of the two of you?",
+      "answers": {
+        "Aryan": "Soch Na Sake",
+        "Shreyasi": "Soch Na Sake"
+      },
+      "decoys": {
+        "Aryan": [
+          "Tum Hi Ho",
+          "Kesariya",
+          "Raataan Lambiyan"
+        ],
+        "Shreyasi": [
+          "Tum Hi Ho",
+          "Kesariya",
+          "Perfect"
+        ]
       }
     },
     {
-      q: "What is one thing about {other} that {name} hopes never changes?",
-      answers: { Aryan: "Q16 Aryan real answer (replace me)", Shreyasi: "Q16 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q16 decoy 1 for Aryan (replace me)", "Q16 decoy 2 for Aryan (replace me)", "Q16 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q16 decoy 1 for Shreyasi (replace me)", "Q16 decoy 2 for Shreyasi (replace me)", "Q16 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is one thing about {other} that {name} hopes never changes?",
+      "answers": {
+        "Aryan": "Your goofiness",
+        "Shreyasi": "Ambition and drive"
+      },
+      "decoys": {
+        "Aryan": [
+          "Your laugh",
+          "Your kindness",
+          "Your stubbornness"
+        ],
+        "Shreyasi": [
+          "Kindness",
+          "Sense of humor",
+          "Competitive streak"
+        ]
       }
     },
     {
-      q: "What is one trip or adventure {name} wants the two of you to take together?",
-      answers: { Aryan: "Q17 Aryan real answer (replace me)", Shreyasi: "Q17 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q17 decoy 1 for Aryan (replace me)", "Q17 decoy 2 for Aryan (replace me)", "Q17 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q17 decoy 1 for Shreyasi (replace me)", "Q17 decoy 2 for Shreyasi (replace me)", "Q17 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is one trip or adventure {name} wants the two of you to take together?",
+      "answers": {
+        "Aryan": "Buying iphones together",
+        "Shreyasi": "Italy"
+      },
+      "decoys": {
+        "Aryan": [
+          "Buying a couch together",
+          "Adopting a dog together",
+          "Building a PC together"
+        ],
+        "Shreyasi": [
+          "Japan",
+          "Greece",
+          "Bali"
+        ]
       }
     },
     {
-      q: "If {name} were an animal, what would they be?",
-      answers: { Aryan: "Q18 Aryan real answer (replace me)", Shreyasi: "Q18 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q18 decoy 1 for Aryan (replace me)", "Q18 decoy 2 for Aryan (replace me)", "Q18 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q18 decoy 1 for Shreyasi (replace me)", "Q18 decoy 2 for Shreyasi (replace me)", "Q18 decoy 3 for Shreyasi (replace me)"]
+      "q": "If {name} were an animal, what would they be?",
+      "answers": {
+        "Aryan": "Whale shark",
+        "Shreyasi": "Monkey"
+      },
+      "decoys": {
+        "Aryan": [
+          "Dolphin",
+          "Sloth",
+          "Tiger"
+        ],
+        "Shreyasi": [
+          "Cat",
+          "Panda",
+          "Otter"
+        ]
       }
     },
     {
-      q: "What would {name} do first during a zombie apocalypse?",
-      answers: { Aryan: "Q19 Aryan real answer (replace me)", Shreyasi: "Q19 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q19 decoy 1 for Aryan (replace me)", "Q19 decoy 2 for Aryan (replace me)", "Q19 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q19 decoy 1 for Shreyasi (replace me)", "Q19 decoy 2 for Shreyasi (replace me)", "Q19 decoy 3 for Shreyasi (replace me)"]
+      "q": "What would {name} do first during a zombie apocalypse?",
+      "answers": {
+        "Aryan": "Find food and water",
+        "Shreyasi": "Cry"
+      },
+      "decoys": {
+        "Aryan": [
+          "Find a weapon",
+          "Build a shelter",
+          "Head for high ground"
+        ],
+        "Shreyasi": [
+          "Hide",
+          "Panic and run",
+          "Call mom"
+        ]
       }
     },
     {
-      q: "What is {name}'s go-to karaoke song?",
-      answers: { Aryan: "Q20 Aryan real answer (replace me)", Shreyasi: "Q20 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q20 decoy 1 for Aryan (replace me)", "Q20 decoy 2 for Aryan (replace me)", "Q20 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q20 decoy 1 for Shreyasi (replace me)", "Q20 decoy 2 for Shreyasi (replace me)", "Q20 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is {name}'s go-to karaoke song?",
+      "answers": {
+        "Aryan": "Chasin you",
+        "Shreyasi": "Girls Just Wanna Have Fun"
+      },
+      "decoys": {
+        "Aryan": [
+          "Last Night",
+          "Wagon Wheel",
+          "Cruise"
+        ],
+        "Shreyasi": [
+          "Dancing Queen",
+          "Wannabe",
+          "I Wanna Dance with Somebody"
+        ]
       }
     },
     {
-      q: "What snack would {name} never share?",
-      answers: { Aryan: "Q21 Aryan real answer (replace me)", Shreyasi: "Q21 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q21 decoy 1 for Aryan (replace me)", "Q21 decoy 2 for Aryan (replace me)", "Q21 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q21 decoy 1 for Shreyasi (replace me)", "Q21 decoy 2 for Shreyasi (replace me)", "Q21 decoy 3 for Shreyasi (replace me)"]
+      "q": "What snack would {name} never share?",
+      "answers": {
+        "Aryan": "Chips",
+        "Shreyasi": "Jalapeño chips"
+      },
+      "decoys": {
+        "Aryan": [
+          "Gummy bears",
+          "Chocolate",
+          "Popcorn"
+        ],
+        "Shreyasi": [
+          "Takis",
+          "Cheddar popcorn",
+          "Dark chocolate"
+        ]
       }
     },
     {
-      q: "What is the weirdest food combination {name} enjoys?",
-      answers: { Aryan: "Q22 Aryan real answer (replace me)", Shreyasi: "Q22 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q22 decoy 1 for Aryan (replace me)", "Q22 decoy 2 for Aryan (replace me)", "Q22 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q22 decoy 1 for Shreyasi (replace me)", "Q22 decoy 2 for Shreyasi (replace me)", "Q22 decoy 3 for Shreyasi (replace me)"]
+      "q": "What is the weirdest food combination {name} enjoys?",
+      "answers": {
+        "Aryan": "Cottage cheese and jam",
+        "Shreyasi": "Chips and biryani"
+      },
+      "decoys": {
+        "Aryan": [
+          "Peanut butter and pickles",
+          "Ice cream and fries",
+          "Hummus and chocolate"
+        ],
+        "Shreyasi": [
+          "Mango with chili powder",
+          "Pickles and ice cream",
+          "Fries dipped in a milkshake"
+        ]
       }
     },
     {
-      q: "If {name} were a cartoon character, who would they be?",
-      answers: { Aryan: "Q23 Aryan real answer (replace me)", Shreyasi: "Q23 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q23 decoy 1 for Aryan (replace me)", "Q23 decoy 2 for Aryan (replace me)", "Q23 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q23 decoy 1 for Shreyasi (replace me)", "Q23 decoy 2 for Shreyasi (replace me)", "Q23 decoy 3 for Shreyasi (replace me)"]
+      "q": "If {name} were a cartoon character, who would they be?",
+      "answers": {
+        "Aryan": "Ferb",
+        "Shreyasi": "Mort from Madagascar"
+      },
+      "decoys": {
+        "Aryan": [
+          "Patrick Star",
+          "Shaggy",
+          "Dexter"
+        ],
+        "Shreyasi": [
+          "Dory",
+          "Olaf",
+          "Minnie Mouse"
+        ]
       }
     },
     {
-      q: "If {name} won the lottery tomorrow, what is the first thing {name} would buy or do?",
-      answers: { Aryan: "Q24 Aryan real answer (replace me)", Shreyasi: "Q24 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q24 decoy 1 for Aryan (replace me)", "Q24 decoy 2 for Aryan (replace me)", "Q24 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q24 decoy 1 for Shreyasi (replace me)", "Q24 decoy 2 for Shreyasi (replace me)", "Q24 decoy 3 for Shreyasi (replace me)"]
+      "q": "If {name} won the lottery tomorrow, what is the first thing {name} would buy or do?",
+      "answers": {
+        "Aryan": "Invest",
+        "Shreyasi": "Go on a trip"
+      },
+      "decoys": {
+        "Aryan": [
+          "Buy a house",
+          "Buy a new car",
+          "Donate to charity"
+        ],
+        "Shreyasi": [
+          "Buy a house",
+          "Go shopping",
+          "Pay off loans"
+        ]
       }
     },
     {
-      q: "What would {name}'s perfect date night look like?",
-      answers: { Aryan: "Q25 Aryan real answer (replace me)", Shreyasi: "Q25 Shreyasi real answer (replace me)" },
-      decoys: {
-        Aryan: ["Q25 decoy 1 for Aryan (replace me)", "Q25 decoy 2 for Aryan (replace me)", "Q25 decoy 3 for Aryan (replace me)"],
-        Shreyasi: ["Q25 decoy 1 for Shreyasi (replace me)", "Q25 decoy 2 for Shreyasi (replace me)", "Q25 decoy 3 for Shreyasi (replace me)"]
+      "q": "What would {name}'s perfect date night look like?",
+      "answers": {
+        "Aryan": "Drinks, ambience and tapas/small plates",
+        "Shreyasi": "Boat day"
+      },
+      "decoys": {
+        "Aryan": [
+          "Dinner and a movie",
+          "Rooftop sunset and cocktails",
+          "Cooking together at home"
+        ],
+        "Shreyasi": [
+          "Picnic in the park",
+          "Fancy dinner",
+          "Dancing and cocktails"
+        ]
       }
     }
   ]

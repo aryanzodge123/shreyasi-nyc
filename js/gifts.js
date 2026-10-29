@@ -182,20 +182,6 @@
     add(root, gameSection);
     select(0);
 
-    /* Answers form for the quiz. Lives here because this part is open before the trip page unlocks. */
-    var FB = CFG.feedbackForm;
-    if (FB && FB.enabled && window.NYC.feedback) {
-      var fbSection = el("section", "section");
-      fbSection.id = "questions";
-      var fbWrap = el("div", "wrap");
-      add(fbWrap, el("h2", "section-title", FB.title));
-      var fbMount = el("div", "game-panel fb-panel");
-      add(fbWrap, fbMount);
-      add(fbSection, fbWrap);
-      add(root, fbSection);
-      window.NYC.games.feedback = window.NYC.feedback.mount(fbMount, FB, { name: CFG.recipient });
-    }
-
     var footer = el("footer", "footer");
     add(footer, add(el("div", "wrap"), el("p", "", "Made with so much love for your birthday.")));
     add(root, footer);

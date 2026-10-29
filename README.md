@@ -31,11 +31,9 @@ Open `index.html?preview=jolly-roger-1030` (it skips both countdowns and opens o
 
 This is a two phone dinner game on the trip page. The names and the 25 prompts are in `js/config.js` under `mostLikely`. Each prompt finishes the sentence "Who's most likely to ...?". Keep the same order on both phones, because the game moves question by question together. The phones do not talk to each other, so after each reveal each person taps "Same pick" or "Different picks" to keep score. Progress is saved on each phone.
 
-## Who knows who better? (quiz) and the answers form
+## Who knows who better? (quiz)
 
-- **Quiz:** on the trip page, next to Most likely to. A switch picks who is playing. Aryan guesses Shreyasi's answers and the other way around. Four choices per question (the real answer and three decoys), and a percentage with a cute saying at the end. The data is in `js/quiz-data.js`. It holds filler answers marked "(replace me)" until the real answers and decoys go in. A question missing an answer or with fewer than 3 decoys is skipped, and the score is out of the complete questions.
-- **Answers form:** in the Birthday games part (it is open before the trip page unlocks). Shreyasi can copy all 25 questions, gives one short answer to each (saved on her phone as she types), and then makes a .txt file. A web page cannot send email by itself, so the Email button opens her mail app with Aryan's address and her answers in the body, and the .txt file downloads so she can attach it. On phones that support it, a Share button can attach the file directly. The questions and the email address are in `js/config.js` under `feedbackForm`.
-- **Remove the form:** set `feedbackForm.enabled` to `false` in `js/config.js`.
+- **Quiz:** on the trip page, next to Most likely to. A switch picks who is playing. Aryan guesses Shreyasi's answers and the other way around. Four choices per question (the real answer and three decoys), and a percentage with a cute saying at the end. The data is in `js/quiz-data.js`. It holds the real answers from both of you plus three decoys per answer. A question missing an answer or with fewer than 3 decoys is skipped, and the score is out of the complete questions.
 
 ## Fill in the pending stops
 
